@@ -19,3 +19,14 @@ exports.createTransacao = (req, res) => {
 exports.getTransacao = (req, res) => {
     res.json(transacoes);
 }
+
+exports.deleteTransacao = (req, res) => {
+    transacoes.length = 0;
+
+    if (transacoes.length > 0) {
+        return res.status(422);
+    }
+
+    res.status(200).send(transacoes);
+
+}
