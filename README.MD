@@ -105,4 +105,4 @@ yarn test
 
 ---
 
-Desenvolvido por [Seu Nome](https://github.com/seu-usuario) 💻
+Desenvolvido por [Gabriel Ribeiro de Carvalho](https://github.com/fulldevgabriel) 💻
