@@ -1,15 +1,15 @@
 <h1 align="center">
-  API para Processamento e Análise Estatística de Transações
+  API de Transações e Estatísticas em Tempo Real
 </h1>
 
-Esta aplicação consiste em uma interface de programação (API) desenvolvida com a plataforma Node.js, cuja finalidade é receber transações financeiras e computar estatísticas derivadas com base nas operações registradas nos últimos 60 segundos. A arquitetura da solução privilegia a eficiência computacional em memória e a aderência aos princípios REST.
+Essa é uma API feita com Node.js para lidar com transações financeiras simples e mostrar estatísticas em tempo real com base nas transações recebidas nos últimos 60 segundos. Tudo acontece em memória, sem banco de dados, e seguindo o padrão REST para facilitar o uso.
 
-##  Pré-requisitos Ambientais
+## 🚀 O que você precisa para rodar
 
-- Ambiente de execução Node.js (versão 18 ou superior)
-- Gerenciador de pacotes: npm ou yarn
+- Node.js (versão 18 ou mais recente)
+- npm ou yarn (para instalar as dependências)
 
-##  Procedimentos para Inicialização
+## ▶️ Como rodar o projeto
 
 1. **Clone o repositório:**
 
@@ -18,7 +18,7 @@ git clone https://github.com/seu-usuario/nome-do-repositorio.git
 cd nome-do-repositorio
 ```
 
-2. **Realize a instalação das dependências:**
+2. **Instale as dependências:**
 
 ```bash
 npm install
@@ -26,7 +26,7 @@ npm install
 yarn install
 ```
 
-3. **Inicialize o servidor de desenvolvimento:**
+3. **Inicie o servidor:**
 
 ```bash
 npm run dev
@@ -34,11 +34,11 @@ npm run dev
 yarn dev
 ```
 
-A aplicação estará disponível para consumo local em `http://localhost:3000`.
+A API estará rodando em `http://localhost:3000`.
 
-##  Interface de Endpoints
+## 🔌 Endpoints disponíveis
 
-### 1. Registro de Transações
+### 1. Adicionar uma nova transação
 
 **POST** `/transacao`
 
@@ -49,27 +49,27 @@ A aplicação estará disponível para consumo local em `http://localhost:3000`.
 }
 ```
 
-- Respostas possíveis:
-  - `201 Created`: transação validada e registrada com sucesso
-  - `422 Unprocessable Entity`: transação rejeitada devido à violação de critérios de entrada (valor negativo, data futura, etc.)
-  - `400 Bad Request`: estrutura do payload JSON inválida
+- Respostas:
+  - `201 Created`: transação registrada com sucesso
+  - `422 Unprocessable Entity`: transação inválida (ex: valor negativo, data no futuro)
+  - `400 Bad Request`: JSON enviado está com erro de formato
 
 ---
 
-### 2. Eliminação de Transações
+### 2. Apagar todas as transações
 
 **DELETE** `/transacao`
 
 - Resposta:
-  - `200 OK`: todas as transações armazenadas foram removidas
+  - `200 OK`: todas as transações foram removidas
 
 ---
 
-### 3. Consulta de Estatísticas Agregadas
+### 3. Ver estatísticas das últimas transações
 
 **GET** `/estatistica`
 
-- Resposta esperada (com base em transações registradas nos últimos 60 segundos):
+- Resposta (com base nas transações dos últimos 60 segundos):
 
 ```json
 {
@@ -81,13 +81,13 @@ A aplicação estará disponível para consumo local em `http://localhost:3000`.
 }
 ```
 
-- Observação: na ausência de transações válidas no intervalo temporal considerado, todos os campos numéricos retornarão o valor `0`.
+- Se não houver nenhuma transação no período, todos os valores serão `0`.
 
 ---
 
-##  Execução de Testes Automatizados
+## 🧪 Rodando os testes
 
-Caso haja cobertura de testes implementada:
+Se o projeto tiver testes configurados, use o comando:
 
 ```bash
 npm test
@@ -97,8 +97,12 @@ yarn test
 
 ---
 
-##  Considerações Técnicas
+## ℹ️ Informações extras
 
-- Não é utilizada qualquer forma de persistência externa (e.g., bancos de dados relacionais ou não relacionais).
-- O sistema opera exclusivamente com estruturas de dados em memória volátil.
-- A comunicação entre cliente e servidor é restrita ao formato JSON.
+- Todos os dados são armazenados apenas em memória.
+- Nada é salvo em banco de dados.
+- As requisições e respostas usam apenas o formato JSON.
+
+---
+
+Desenvolvido por [Seu Nome](https://github.com/seu-usuario) 💻
