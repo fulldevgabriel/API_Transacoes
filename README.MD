@@ -44,14 +44,15 @@ A API estará rodando em `http://localhost:3000`.
 
 ```json
 {
-  "valor": 123.45,
-  "dataHora": "2020-08-07T12:34:56.789-03:00"
+  "valor": 123.45
 }
 ```
 
+> ⚠️ **Importante:** você só precisa enviar o valor da transação. A data e hora são registradas automaticamente pelo backend no momento em que a transação é recebida.
+
 - Respostas:
   - `201 Created`: transação registrada com sucesso
-  - `422 Unprocessable Entity`: transação inválida (ex: valor negativo, data no futuro)
+  - `422 Unprocessable Entity`: transação inválida (ex: valor negativo)
   - `400 Bad Request`: JSON enviado está com erro de formato
 
 ---
