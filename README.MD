@@ -1,5 +1,5 @@
 <h1 align="center">
-  # API para Processamento e Análise Estatística de Transações
+  API para Processamento e Análise Estatística de Transações
 </h1>
 
 Esta aplicação consiste em uma interface de programação (API) desenvolvida com a plataforma Node.js, cuja finalidade é receber transações financeiras e computar estatísticas derivadas com base nas operações registradas nos últimos 60 segundos. A arquitetura da solução privilegia a eficiência computacional em memória e a aderência aos princípios REST.
